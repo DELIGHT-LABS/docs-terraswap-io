@@ -59,7 +59,3 @@ Here is an example:
 ```
 
 This rule can be applied to other messages. This overview can be helpful of contract self-study.
-
-## Frequently used message
-
-TBD
