@@ -3,5 +3,4 @@ weight: 3
 bookFlatSection: true
 ---
 
-# Query
-
+# CW20 Token
