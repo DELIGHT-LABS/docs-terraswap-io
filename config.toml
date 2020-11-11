@@ -1,8 +1,8 @@
-# TerraSwap document
+# Terraswap document
 
 baseURL = "https://docs-terraswap-io.netlify.app"
 languageCode = "en-us"
-title = "TerraSwap"
+title = "Terraswap"
 theme = "book-delight"
 
 # Book configuration
@@ -31,7 +31,7 @@ enableGitInfo = true
   weight = 10
 
 [[menu.after]]
-  name = "TerraSwap"
+  name = "Terraswap"
   url = "https://terraswap.io"
   weight = 20
 

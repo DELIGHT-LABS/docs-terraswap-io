@@ -6,7 +6,7 @@ bookFlatSection: true
 
 Each liquidity pool for mAssets/MIR has 2 commission rates (adjustable by governance) that make up the total trading fee outside of spread determined by algorithmic price-making. Trading fees are received as mAssets/MIR or UST, depending on the direction of the individual trade.
 
-> Additionally, if the traded asset is a native token such as UST, the Terra network will incur a tax on the transfer (not controlled by TerraSwap contract).
+> Additionally, if the traded asset is a native token such as UST, the Terra network will incur a tax on the transfer (not controlled by Terraswap contract).
 
 {{< katex display >}}\text{received} = B_{\text{out}}(1- \text{fee}_{\text{LP}} - \text{fee}_{\text{owner}}) - \text{tax}{{< /katex >}}
 
