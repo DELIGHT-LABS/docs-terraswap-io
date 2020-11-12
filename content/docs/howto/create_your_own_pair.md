@@ -47,7 +47,6 @@ First, you should organize another JSON as like below:
     "commission_collector": "terracommissioncollector0001xxxxxxxx",
     "lp_commission": "0.3",
     "owner": "terratokencontractowner0001xxxxxxxxxx",
-    "owner_commission": "0.2",
     "token_code_id": 1
 }
 ```
@@ -81,7 +80,6 @@ After complete the JSON, you may convert the JSON into Base64 encoding.
     "commission_collector": "terracommissioncollector0001xxxxxxxx",
     "lp_commission": "0.3",
     "owner": "terratokencontractowner0001xxxxxxxxxx",
-    "owner_commission": "0.2",
     "token_code_id": 1
 }
 ```

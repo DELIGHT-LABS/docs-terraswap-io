@@ -17,8 +17,7 @@ Update config of:
 {
     "update_config": {
         "owner": "<HumanAddr>", // or do not insert this key if not essential
-        "lp_commission": 0.3, // or do not insert this key if not essential
-        "owner_commission": 0.3, // or do not insert this key if not essential
+        "lp_commission": 0.3 // or do not insert this key if not essential
     }
 }
 ```

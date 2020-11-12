@@ -4,7 +4,7 @@ bookFlatSection: true
 
 # Trading Fees
 
-Each liquidity pool for mAssets/MIR has LP commission rates (adjustable by governance) that make up the total trading fee outside of spread determined by algorithmic price-making. Trading fees are received as mAssets/MIR or UST. The fee will be paid in receiving token.
+Each liquidity pool for mAssets/MIR has LP commission rates that make up the total trading fee outside of spread determined by algorithmic price-making. Trading fees are received as mAssets/MIR or UST. The fee will be paid in receiving token.
 
 > Additionally, if the traded asset is a native token such as UST, the Terra network will incur a tax on the transfer (not controlled by Terraswap contract).
 
