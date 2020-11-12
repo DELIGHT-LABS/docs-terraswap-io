@@ -8,7 +8,6 @@ headless: true
 - [Trading Fees]({{< relref "/docs/introduction/trading_fees" >}})
 <br />
 - **How To**
-- [Mint Your CW20 Token]({{< relref "/docs/howto/token" >}})
 - [Create Your Own Pair]({{< relref "/docs/howto/create_your_own_pair" >}})
 - [Query]({{< relref "/docs/howto/query" >}})
 - [Swap]({{< relref "/docs/howto/swap" >}})
