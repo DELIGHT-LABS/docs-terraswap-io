@@ -95,7 +95,7 @@ Swapping contract-minted token to native token is executed with the same logic a
 }
 ```
 
-The method is a little bit tricky. Please do not loose your concentration!
+The method is a little bit tricky. Please do not lose your concentration!
 
 ```bash
 terracli tx wasm execute <contract-address> <handle-msg> <coins>
