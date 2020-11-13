@@ -7,7 +7,15 @@ title: About
 # About
 
 Terraswap is a [Uniswap](https://uniswap.org/)-inspired automated market-maker (AMM) protocol implemented with smart contracts on the Terra blockchain. This enables a decentralized on-chain exchange for the various assets involved in Terra ecosystem.
+***
+## Participants
 
+Terraswap users can become trader, liquidity provider or both. 
+
+A **trader** can exchange their token against the other through Terraswap using the price determined by the liquidity pool ratio. 
+
+**Liquidity provider** adds equal value of two paired assets to their corresponding Terraswap pool, which increases liquidity for that market while maintaining the pool price. In this process, liquidity providers are rewarded by newly minted LP tokens. LP tokens represent the liquidity provider's share in the pool and provide the benefit of earning trading fee which is accumulated into the pool on every swap transaction. Liquidity providers can burn their LP tokens to withdraw their share from the pool. 
+***
 # Terraswap Web Application
 
 **Terraswap Web Application is the official web frontend interface swap Terra native tokens and CW20 tokens. The web application is located [here](https://app.terraswap.io).**
