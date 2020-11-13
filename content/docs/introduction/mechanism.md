@@ -25,7 +25,7 @@ In order to preserve the constant product invariant, Terraswap will make prices 
 
 To determine the proper value of {{< katex >}}B_{out}{{< /katex >}} given the trader's offered asset {{< katex >}}A_{in}{{< /katex >}} :
 
-{{< katex display >}}B_{\text{out}} = \frac{XA_{\text{in}}}{Y+A_{\text{in}}}{{< /katex >}}
+{{< katex display >}}B_{\text{out}} = \frac{YA_{\text{in}}}{X+A_{\text{in}}}{{< /katex >}}
 
 Terraswap is able to execute trades with only the current balances of the pool and the number of incoming tokens. The market price is encoded the number of pool's target tokens divided by the source asset (also called the pool ratio). The spread between the executed and the expected trade is:
 
