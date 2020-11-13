@@ -22,9 +22,7 @@ The JSON parameter of instantiation is as below:
 }
 ```
 
-The factory contract is responsible for creation of Terraswap pair as well as being the directory for all pairs. <br />
-You may input numbers corresponding to `pair_code_id` and `token_code_id`. (will be announced) <br />
-The token contract address is used for `init_hook.contract_addr`.
+The factory contract is responsible for creation of Terraswap pair as well as being the directory for all pairs. You may input numbers corresponding to `pair_code_id` and `token_code_id`. The token contract address is used for `init_hook.contract_addr`.
 
 To set `init_hook.msg`, you must first organize another JSON as below:
 
