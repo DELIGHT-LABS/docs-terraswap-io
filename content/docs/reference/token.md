@@ -127,7 +127,7 @@ Before execution, the allowance should be increased.
 
 ### Burn from
 
-It burns token from token supply, whose owner is not same as the contract executor.
+Burns token from token supply, whose owner is not same as the contract executor.
 
 ```json
 {
@@ -142,7 +142,7 @@ It burns token from token supply, whose owner is not same as the contract execut
 
 ### Get balance
 
-Check balance of the given address
+Check the balance of the given address
 
 ```json
 {
@@ -155,7 +155,7 @@ Check balance of the given address
 ### Token info
 
 Check metadata of the contract.<br />
-It checks
+It check:
 - Name
 - Decimals
 - Total supply
@@ -196,8 +196,8 @@ Get list of all allowance of the token.
 {
     "all_allowances": {
         "owner": "<HumanAddr>",
-        "start_after": "<HumanAddr>", // or do not insert this key if not essential
-        "limit": 1 // or do not insert this key if not essential
+        "start_after": "<HumanAddr>", // optional
+        "limit": 1 // optional
     }
 }
 ```
@@ -209,8 +209,8 @@ Get all accounts list of the token holder.
 ```json
 {
     "all_accounts": {
-        "start_after": "<HumanAddr>", // or do not insert this key if not essential
-        "limit": 1 // or do not insert this key if not essential
+        "start_after": "<HumanAddr>", // optional
+        "limit": 1 // optional
     }
 }
 ```
