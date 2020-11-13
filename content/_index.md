@@ -12,13 +12,13 @@ Terraswap is a [Uniswap](https://uniswap.org/)-inspired automated market-maker (
 
 Terraswap users can become trader, liquidity provider or both. 
 
-A **trader** can exchange their token against the other through Terraswap using the price determined by the liquidity pool ratio. 
+A **trader** can exchange their token for another token through Terraswap using the price determined by the liquidity pool ratio.
 
-**Liquidity provider** adds equal value of two paired assets to their corresponding Terraswap pool, which increases liquidity for that market while maintaining the pool price. In this process, liquidity providers are rewarded by newly minted LP tokens. LP tokens represent the liquidity provider's share in the pool and provide the benefit of earning trading fee which is accumulated into the pool on every swap transaction. Liquidity providers can burn their LP tokens to withdraw their share from the pool. 
+**Liquidity provider** adds equal value of two assets to their corresponding Terraswap pair pool, which increases liquidity for the corresponding pair market while maintaining the pool price. In this process, liquidity providers are rewarded by newly minted LP tokens. LP tokens represent the liquidity provider's share in the pool and provide the benefit of earning trading fees, which are accumulated into the pool on every swap transaction. Liquidity providers can burn their LP tokens to withdraw their share from the pool. 
 ***
 # Terraswap Web Application
 
-**Terraswap Web Application is the official web frontend interface swap Terra native tokens and CW20 tokens. The web application is located [here](https://app.terraswap.io).**
+**Terraswap Web Application is the official web front-end interface swapping Terra native tokens and CW20 tokens. The web application is located [here](https://app.terraswap.io).**
 
 [Terra Station Extension](https://chrome.google.com/webstore/detail/terra-station/aiifbnbfobpmeekipheeijimdpnlpgpp) is required to interact with Terraswap Web Application. 
 >Currently, Station Extension is only available for Google Chrome.
