@@ -7,25 +7,10 @@ bookFlatSection: true
 
 ## Transaction
 
-### Update config
-
-Update config of:
-- Owner transfer
-- Commission rate update (in the rate of percent. e.g.) 0.5 -> 0.5% )
-
-```json
-{
-    "update_config": {
-        "owner": "<HumanAddr>", // or do not insert this key if not essential
-        "lp_commission": 0.3 // or do not insert this key if not essential
-    }
-}
-```
-
 ### Provide liquidity
 
-Send user's asset to the terraswap contract and provide liquidity.<br />
-**NOTE: You should [allow your allowance]({{< relref "/docs/reference/token" >}}) of the token before providing liquidity!!**
+Send user's asset to a Terraswap contract and provide liquidity.<br />
+**NOTE: You should [allow your allowance]({{< relref "/docs/reference/token" >}}) of the token before providing liquidity!**
 
 Asset can be both of contract-based token and native token. It can be distinguished with the key under `info`: `token` or `native_token`.
 
@@ -51,7 +36,7 @@ Asset can be both of contract-based token and native token. It can be distinguis
         "amount": "10"
       }
     ],
-    "slippage_tolerance": 0.1 // or do not insert this key if not essential
+    "slippage_tolerance": 0.1 // optinonal
   }
 }
 ```
@@ -75,8 +60,8 @@ Swap between the given two tokens. It can be thought of as trade.<br />
             },
             "amount": "10"
         },
-        "belief_price": 0.1,  // or do not insert this key if not essential
-        "max_spread": 0.1, // or do not insert this key if not essential
+        "belief_price": 0.1,  // optional
+        "max_spread": 0.1, // optional
         "to": "<HumanAddr>",
     }
 }
@@ -93,38 +78,15 @@ Swap between the given two tokens. It can be thought of as trade.<br />
             },
             "amount": "10"
         },
-        "belief_price": 0.1,  // or do not insert this key if not essential
-        "max_spread": 0.1, // or do not insert this key if not essential
-        "to": "<HumanAddr>",
+        "belief_price": 0.1,  // optional
+        "max_spread": 0.1, // optional
+        "to": "<HumanAddr>" // optional,
     }
 }
 ```
 
 ## Query
 
-### General config
-
-```json
-{
-    "config_general" :{}
-}
-```
-
-### Asset config
-
-```json
-{
-    "config_asset": {}
-}
-```
-
-### Swap config
-
-```json
-{
-    "config_swap": {}
-}
-```
 
 ### Pool
 
