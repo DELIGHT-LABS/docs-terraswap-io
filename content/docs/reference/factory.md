@@ -55,3 +55,25 @@ Instantiate pair from uploaded WASM binary. Please check [this document]({{< rel
     }
 }
 ```
+
+### Pairs
+
+```json
+{
+    "pairs": {
+        "start_after": [ //optional
+            {
+                "token": {
+                    "contract_addr": "<HumanAddr>"
+                }
+            },
+            {
+                "native_token": {
+                    "denom": "uluna"
+                }
+            }
+        ],
+        "limit": 10 //optional, default=10, max=30
+    }
+}
+```
