@@ -11,6 +11,7 @@ headless: true
 - [Create Your Own Pair]({{< relref "/docs/howto/create_your_own_pair" >}})
 - [Query]({{< relref "/docs/howto/query" >}})
 - [Swap]({{< relref "/docs/howto/swap" >}})
+- [Frequently Used Message]({{< relref "/docs/howto/freq_used_msg" >}})
 <br />
 - **Message reference**
 - [CW20 Token]({{< relref "/docs/reference/token" >}})
