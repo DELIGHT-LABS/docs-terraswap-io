@@ -99,7 +99,7 @@ And it expires on the given time point.
 }
 ```
 
-### Trasnfer from / send from
+### Transfer from / send from
 
 It transfers token from owner to recipient, which not owner nor recipeint are not the contract executor.<br />
 Before execution, the allowance should be increased.
