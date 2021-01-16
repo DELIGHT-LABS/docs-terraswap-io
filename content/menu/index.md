@@ -18,6 +18,9 @@ headless: true
 - [Pair]({{< relref "/docs/reference/pair" >}})
 - [Factory]({{< relref "/docs/reference/factory" >}})
 <br />
+- **Resources**
+- [Contract addresses]({{< relref "/docs/contract_resources/contract_addresses" >}})
+<br />
 <br />
 <br />
 
