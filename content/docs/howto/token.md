@@ -14,8 +14,7 @@ Except any function of your token itself contains more than asset, we recommend 
 
 ### 1. Using the pre-stored binary (recommended)
 
-The standard CW20 token is already stored in Terra network as code ID x. <br/>
-(We will inform the number after this contract stores)<br/>
+The standard CW20 token is already stored in Terra network as code ID `3`. <br/>
 
 You may instantiate your own token using the JSON as follows:
 
