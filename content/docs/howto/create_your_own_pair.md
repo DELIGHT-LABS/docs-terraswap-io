@@ -13,8 +13,8 @@ The JSON parameter of instantiation is as below:
 
 ```json
 {
-  "pair_code_id": "1",
-  "token_code_id": "2",
+  "pair_code_id": 4,
+  "token_code_id": 3,
   "init_hook": {
     "msg": "base64_encoded_json_data",
     "contract_addr": "terra..."
