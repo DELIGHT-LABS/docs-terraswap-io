@@ -10,11 +10,23 @@ bookFlatSection: true
 This token contract is implemented under the CW20 standard and it fully supports terraswap feature.
 Except any function of your token itself contains more than asset, we recommend to mint your own token by **instantiating this binary**, rather than developing your own.
 
+---
+> **NOTE**
+>
+> We strongly recommend to create by the pre-stored binary. (hereinafter, referred to as `Token factory`) \
+> There are some advantages below:
+>
+> * These token, pair contract codes are well audited by foundation. Don't have to audit for yours additionally.
+> * Now, the foundation lists your token only Token factory-created tokens & pairs.
+> * You don't have to migrate your contract whenever Terra network perform an upgrade. Foundation helps you migrating and you don't have to do any action.
+>
+---
+
 ## How to mint
 
-### 1. Using the pre-stored binary (recommended)
+### 1. Using Token factory (recommended)
 
-The standard CW20 token is already stored in Terra network as code ID `3`. <br/>
+The standard CW20 token is already stored in Terra network as code ID `3`.\
 Please check [here]({{< relref "/docs/contract_resources/contract_addresses" >}}) for the more addresses.
 
 You may instantiate your own token using the JSON as follows:
@@ -58,7 +70,6 @@ Then, you may find the address of your contract from:
     "value": "terra18vd8fpwxzck93qlwghaj6arh4p7c5n896xzem5"
 }
 ```
-
 
 ### 2. Implement yourself
 

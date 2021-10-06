@@ -5,9 +5,10 @@ bookFlatSection: true
 
 # Create Your Own Pair
 
-## How to create your own pair
+## 1) Instanciation by code ID
 
-A pre-stored pair is used in this procedure. Token contract should be instantiated in advance.
+A pre-stored pair is used in this procedure. Token contract should be instantiated in advance.\
+If you use the foundation's token factory contract, the code ID is `5`.
 
 The JSON parameter of instantiation is as below:
 
@@ -21,6 +22,13 @@ The JSON parameter of instantiation is as below:
   }
 }
 ```
+
+---
+> **NOTE**
+>
+> It doesn't work when you try to pair the bonded asset pair. This token wasn't created by this token factory.
+> If you want to create with bonded asset, check the section 2 below.
+---
 
 The factory contract is responsible for creation of Terraswap pair as well as being the directory for all pairs. You may input numbers corresponding to `pair_code_id` and `token_code_id`. The token contract address is used for `init_hook.contract_addr`.
 
@@ -91,3 +99,36 @@ Copy this encoded string into `init_hook.msg` of the JSON, which was provided at
 ```
 
 Factory contract is instantiated and a new pair is created.
+
+## 2) Instanciation by contract address
+
+If you use the foundation's token factory contract, the contract address is `terra1ulgw0td86nvs4wtpsc80thv6xelk76ut7a7apj`.
+
+You may organize the JSON as below:
+
+```json
+{
+  "create_pair": {
+    "asset_infos": [
+      {
+        "token": {
+          "contract_address": "terra..."
+        }
+      },
+      {
+        "native_token": {
+          "denom": "uusd"
+        }
+      }
+    ]
+  }
+}
+```
+
+This is a JSON constructor of pair contract.
+
+- A token pair can be either, contract-based token, or terra-native token
+  - `asset_infos[x].token.contract_addr`: Contract-basd token **address** is entered here.
+  - `asset_infos[x].native_token.denom`: Terra native token **denominator** is entered here.
+
+Then, you may execute the contract with the organized JSON above.

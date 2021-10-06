@@ -18,7 +18,7 @@
 - usdr-uluna pair contract: `terra1vs2vuks65rq7xj78mwtvn7vvnm2gn7adjlr002`
 - usdr-uluna lp token: `terra1mljg7dvzknqh3gc62emagf7hwxxg8efemennp8`
 
-## Tequila testnet
+## Bombay testnet
 
 ### Factory
 - Token code id: 148
