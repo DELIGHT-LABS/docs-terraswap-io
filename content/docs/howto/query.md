@@ -9,12 +9,12 @@ bookFlatSection: true
 
 - Command line
 ```bash
-terracli query wasm contract-store <contract_address> '<JSON_formed_message>'
+terrad query wasm contract-store <contract_address> '<JSON_formed_message>'
 ```
 ex)
 
 ```bash
-terracli query wasm contract-store terra18vd8fpwxzck93qlwghaj6arh4p7c5n896xzem5 '{"balance":{"address": "terra1wxe503thjmapngtnyqarxrc4jy80vf800vf0cy"}}'
+terrad query wasm contract-store terra18vd8fpwxzck93qlwghaj6arh4p7c5n896xzem5 '{"balance":{"address": "terra1wxe503thjmapngtnyqarxrc4jy80vf800vf0cy"}}'
 ```
 
 - RESTFul API

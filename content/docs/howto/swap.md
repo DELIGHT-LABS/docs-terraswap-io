@@ -22,7 +22,7 @@ Therefore, a different pricing approach is used in Terraswap - algorithmic prici
 By command line, all transactions can be executed in this way:
 
 ```bash
-terracli tx wasm execute <contract-address> <handle-msg> <coins>
+terrad tx wasm execute <contract-address> <handle-msg> <coins>
 ```
 
 - `contract-address`: In swap transaction, this should be the pair address.
@@ -98,7 +98,7 @@ Swapping contract-minted token to native token is executed with the same logic a
 The method is a little bit tricky. Please do not lose your concentration!
 
 ```bash
-terracli tx wasm execute <contract-address> <handle-msg> <coins>
+terrad tx wasm execute <contract-address> <handle-msg> <coins>
 ```
 
 In the CLI, 

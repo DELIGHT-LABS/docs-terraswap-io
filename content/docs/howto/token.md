@@ -53,14 +53,14 @@ You may instantiate your own token using the JSON as follows:
 Then, the CLI reads:
 
 ```bash
-terracli tx wasm instantiate <token_bin_code> '{"name": "yout_token_name", "symbol": "SYMBOL", "decimals": 3, ... }' --from your_key
+terrad tx wasm instantiate <token_bin_code> '{"name": "yout_token_name", "symbol": "SYMBOL", "decimals": 3, ... }' --from your_key
 ```
 
 After confirmantion, your token is minted on terra network!
 
 With your tx hash, you may query the tx:
 ```bash
-terracli query tx EF2REFAWE234A2EFV....
+terrad query tx EF2REFAWE234A2EFV....
 ```
 
 Then, you may find the address of your contract from:
