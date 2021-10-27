@@ -40,7 +40,7 @@ To set `init_hook.msg`, you must first organize another JSON as below:
     "asset_infos": [
       {
         "token": {
-          "contract_address": "terra..."
+          "contract_addr": "terra..."
         }
       },
       {
@@ -112,7 +112,7 @@ You may organize the JSON as below:
     "asset_infos": [
       {
         "token": {
-          "contract_address": "terra..."
+          "contract_addr": "terra..."
         }
       },
       {
