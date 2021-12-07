@@ -20,7 +20,15 @@ A **trader** can exchange their token for another token through Terraswap using 
 
 **Terraswap Web Application is the official web front-end interface swapping Terra native tokens and CW20 tokens. The web application is located [here](https://app.terraswap.io).**
 
-[Terra Station Extension](https://chrome.google.com/webstore/detail/terra-station/aiifbnbfobpmeekipheeijimdpnlpgpp) is required to interact with Terraswap Web Application. 
->Currently, Station Extension is only available for Google Chrome.
+Wallet is required to interact with Terraswap Web Application.
+> For web, 
+> - [Terra Station](https://chrome.google.com/webstore/detail/terra-station/aiifbnbfobpmeekipheeijimdpnlpgpp)
+> - [XDEFI Wallet](https://chrome.google.com/webstore/detail/xdefi-wallet/hmeobnfnfcmdkdcmlblgagmfpfboieaf)
+>
+> For android,
+> - [Terra Station](https://play.google.com/store/apps/details?id=money.terra.station)
+>
+> For ios,
+> - [Terra Station](https://apps.apple.com/app/id1548434735)
 
 First, Terra native tokens must be sent to the wallet address corresponding to your Terra Station Extension in order to execute swaps from the web application. Once you generate a transaction in the proper format, Station Extension will prompt you to sign the transaction by entering your password. 
