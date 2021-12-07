@@ -19,13 +19,13 @@ terrad query wasm contract-store terra18vd8fpwxzck93qlwghaj6arh4p7c5n896xzem5 '{
 
 - RESTFul API
 ```URL
-<light_clinet_address>/wasm/contracts/<contract_address>/store?query_msg=<JSON_formed_message>
+<light_clinet_address>/terra/wasm/v1beta1/contracts/<contract_address>/store?query_msg=<JSON_formed_message_with_base64>
 ```
 
 ex)
 
 ```URL
-https://tequila-lcd.terra.dev/wasm/contracts/terra1wxe503thjmapngtnyqarxrc4jy80vf800vf0cy/store?query_msg={%22pairs%22:{}}
+https://bombay-lcd.terra.dev/terra/wasm/v1beta1/contracts/terra18qpjm4zkvqnpjpw0zn0tdr8gdzvt8au35v45xf/store?query_msg=eyJwYWlycyI6e319
 ```
 
 ## How to oragnize query message
