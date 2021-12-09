@@ -17,6 +17,8 @@ Contribute to pool by sending sender's token pair. Not only increasing its size,
 
 Execute this message by the **Pair contract** address!
 
+If you provide cw20, first increase your allowance. [Execute `IncreaseAllowance`]({{< relref "/docs/reference/token" >}})
+
 ```json
 {
   "provide_liquidity": {
