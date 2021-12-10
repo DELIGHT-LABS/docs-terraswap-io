@@ -13,11 +13,10 @@ Therefore, a different pricing approach is used in Terraswap - algorithmic prici
 
 - Token & pair should be deployed
 - You should know the addresses of token & pair.
-- Increase your allowance. [Execute `IncreaseAllowance`]({{< relref "/docs/reference/token" >}})
 
 ## Swap by using CLI
 
-### (Native token, Contract-minted token) -> Contract-minted Token
+### When Offer_asset is native & IBC token
 
 By command line, all transactions can be executed in this way:
 
@@ -30,8 +29,6 @@ terrad tx wasm execute <contract-address> <handle-msg> <coins>
 - `coins`: Fee to execute transaction
 
 Enter `contract-address`, `coins` and `handle-msg`. To learn more about the general rules for `handle-msg` please refer to this [link]({{< relref "/docs/howto/query" >}}).
-
-- Source asset: native token
 
 ```json
 {
@@ -49,37 +46,19 @@ Enter `contract-address`, `coins` and `handle-msg`. To learn more about the gene
 }
 ```
 
-- Source asset: contract-minted token
-
-```json
-{
-    "swap": {
-        "offer_asset": {
-            "info" : {
-                "token": {
-                    "contract_addr": "<HumanAddr>"
-                }
-            },
-            "amount": "10"
-        },
-        "to": "<HumanAddr>"
-    }
-}
-```
-
-`swap.offer_asset` represents your source asset. Please make sure that `swap.offer_asset.amount` is not same as your amount. It depends on the decimal of the token setting. In case of Luna, its decimal is 9. Then, if `swap.offer_asset.amount` reads `10`, the actual amount is `10 x 10^-9`. So, you should multiply with mathcing value, `10^(decimal)`.
+`swap.offer_asset` represents your source asset. Please make sure that `swap.offer_asset.amount` is not same as your amount. It depends on the decimal of the token setting. In case of Luna, its decimal is 6. Then, if `swap.offer_asset.amount` reads `10`, the actual amount is `10 x 10^-6`. So, you should multiply with mathcing value, `10^(decimal)`.
 
 `swap.to` is the destination token address. It is unnecessary to enter the amount to swap into, since Terraswap price is calculated algorithmically. 
 
 After filling it out, you may choose to change it into an inline string (not necessary if you can make it with multiline):
 
 ```bash
-'{"swap":{"offer_asset": {"info" : {"token": {"contract_addr": "<HumanAddr>"}},"amount": "10"},"to": "<HumanAddr>",}}'
+'{"swap":{"offer_asset": {"info" : {"native_token": {"denom": "uluna"}},"amount": "10"},"to": "<HumanAddr>",}}'
 ```
 
 This is your `handle-msg`. The `handle-msg` can be used to complete the CLI command to swap tokens. 
 
-### Contract-minted token -> Native Token
+### When offer_asset is contract-minted token
 
 Swapping contract-minted token to native token is executed with the same logic as above, but requires a differnet `handle-msg` due to difference in token system and its implementation. Message looks like:
 
