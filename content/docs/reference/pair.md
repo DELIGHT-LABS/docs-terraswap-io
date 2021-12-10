@@ -46,8 +46,6 @@ Asset can be both of contract-based token and native token. It can be distinguis
 Swap between the given two tokens. It can be thought of as trade.<br />
 `offer_asset` is your source asset and `to` is your destination token contract.<br />
 
-**NOTE: You should [allow your allowance]({{< relref "/docs/reference/token" >}}) of the token before swap!!**<br />
-**NOTE: This method is only used to swap to contract-based token as a destination! In opposite case, please check [another document]({{< relref "/docs/howto/swap" >}})**
 
 ```json
 {
@@ -69,19 +67,28 @@ Swap between the given two tokens. It can be thought of as trade.<br />
 
 ```json
 {
-    "swap": {
-        "offer_asset": {
-            "info" : {
-                "token": {
-                    "contract_addr": "<HumanAddr>"
-                }
-            },
-            "amount": "10"
-        },
-        "belief_price": 0.1,  // optional
-        "max_spread": 0.1, // optional
-        "to": "<HumanAddr>" // optional,
+    "send": {
+        "contract": "<HumanAddr>",
+        "amount": "10",
+        "msg": Binary({
+            "swap": {
+                "offer_asset": {
+                    "info" : {
+                        "token": {
+                            "contract_addr": "<HumanAddr>"
+                        }
+                    },
+                    "amount": "10"
+                },
+                "belief_price": 0.1,  // optional
+                "max_spread": 0.1, // optional
+                "to": "<HumanAddr>" // optional,
+            }
+        })
     }
+}
+{
+    
 }
 ```
 
