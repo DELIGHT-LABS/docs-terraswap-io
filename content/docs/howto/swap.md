@@ -16,7 +16,7 @@ Therefore, a different pricing approach is used in Terraswap - algorithmic prici
 
 ## Swap by using CLI
 
-### When Offer_asset is native token
+### When Offer_asset is native & IBC token
 
 By command line, all transactions can be executed in this way:
 
