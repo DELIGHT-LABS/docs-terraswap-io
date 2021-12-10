@@ -86,8 +86,7 @@ Response:
 
 ```json
 {
-  "height": "699536",
-  "result": {
+  "query_result": {
     "assets": [
       {
         "info": {
@@ -95,21 +94,22 @@ Response:
             "denom": "ukrw"
           }
         },
-        "amount": "616618779506317"
+        "amount": "2559780349122011"
       },
       {
         "info": {
           "native_token": {
-            "denom": "uluna"
+          "denom": "uluna"
           }
         },
-        "amount": "1407689375952"
+        "amount": "31364620251"
       }
     ],
-    "total_share": "29432943447776"
+    "total_share": "7114570186107"
   }
 }
 ```
+- ex) Luna <> KRT https://lcd.terra.dev/terra/wasm/v1beta1/contracts/terra1zw0kfxrxgrs5l087mjm79hcmj3y8z6tljuhpmc/store?query_msg=eyJwb29sIjp7fX0=
 
 ### Simulation / Reverse simulation
 
@@ -134,26 +134,26 @@ If you want to know how much the target token will be given from source token, u
 }
 ```
 
-#### Simulation request
+#### Simulation response
 
 ```json
 {
-  "height": "1274586",
-  "result": {
-    "return_amount": "2875706843",
-    "spread_amount": "147593468",
-    "commission_amount": "8653079"
+  "query_result": {
+    "return_amount": "813428493367",
+    "spread_amount": "260126256",
+    "commission_amount": "2447628365"
   }
 }
 ```
+- ex) Luna <> KRT https://lcd.terra.dev/terra/wasm/v1beta1/contracts/terra1zw0kfxrxgrs5l087mjm79hcmj3y8z6tljuhpmc/store?query_msg=ewogICJzaW11bGF0aW9uIjogewogICAgIm9mZmVyX2Fzc2V0IjogewogICAgICAiYW1vdW50IjoiMTAwMDAwMDAiLAogICAgICAiaW5mbyI6IHsKICAgICAgICAibmF0aXZlX3Rva2VuIjogewogICAgICAgICAgImRlbm9tIjoidWx1bmEiCiAgICAgICAgfQogICAgICB9CiAgICB9CiAgfQp9
 
-#### Reverse simulation response
+#### Reverse simulation request
 
 ```json
 {
   "reverse_simulation":{
     "ask_asset": {
-      "amount":"5000000000",
+      "amount":"500000000000",
       "info": {
         "native_token": {
           "denom": "ukrw"
@@ -163,14 +163,14 @@ If you want to know how much the target token will be given from source token, u
   }
 }
 ```
-
+#### Reverse simulation response
 ```json
 {
-  "height":"1274605",
-  "result": {
-    "offer_amount": "18070071",
-    "spread_amount": "463716168",
-    "commission_amount": "15045135"
+  "query_result": {
+    "offer_amount": "6146066",
+    "spread_amount": "98210972",
+    "commission_amount": "1504513540"
   }
 }
 ```
+- ex) Luna <> KRT https://lcd.terra.dev/terra/wasm/v1beta1/contracts/terra1zw0kfxrxgrs5l087mjm79hcmj3y8z6tljuhpmc/store?query_msg=ewogICJyZXZlcnNlX3NpbXVsYXRpb24iOnsKICAgICJhc2tfYXNzZXQiOiB7CiAgICAgICJhbW91bnQiOiI1MDAwMDAwMDAwMDAiLAogICAgICAiaW5mbyI6IHsKICAgICAgICAibmF0aXZlX3Rva2VuIjogewogICAgICAgICAgImRlbm9tIjogInVrcnciCiAgICAgICAgfQogICAgICB9CiAgICB9CiAgfQp9
