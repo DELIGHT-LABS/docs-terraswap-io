@@ -15,7 +15,7 @@ Transfer token from the sender user to the recipient.
 {
     "transfer": {
         "recipient": "<HumanAddr>",
-        "amount": 123123,
+        "amount": "123123",
     }
 }
 ```
@@ -27,7 +27,7 @@ Burn tokens from total supply.
 ```json
 {
     "burn": {
-        "amount": 123123
+        "amount": "123123"
     }
 }
 ```
@@ -42,7 +42,7 @@ And, it triggers given message in `msg`. The given message should be executable 
 {
     "send": {
         "contract": "<HumanAddr>",
-        "amount": 123123,
+        "amount": "123123",
         "msg": "1234erwfaffaesfaef="
     }
 }
@@ -56,7 +56,7 @@ It produces token and transfer to given recipient.
 {
     "mint": {
         "recipient": "<HumanAddr>",
-        "amount": 123123
+        "amount": "123123"
     }
 }
 ```
@@ -71,7 +71,7 @@ And it expires on the given time point.
 {
     "increase_allowance": {
         "spender": "<HumanAddr>",
-        "amount": 123123,
+        "amount": "123123",
         "expires": {
             "at_height": 123123,
             // or
@@ -87,7 +87,7 @@ And it expires on the given time point.
 {
     "decrease_allowance": {
         "spender": "<HumanAddr>",
-        "amount": 123123,
+        "amount": "123123",
         "expires": {
             "at_height": 123123,
             // or
@@ -109,7 +109,7 @@ Before execution, the allowance should be increased.
     "transfer_from": {
         "owner": "<HumanAddr>",
         "recipient": "<HumanAddr>",
-        "amount": 123123,
+        "amount": "123123",
     }
 }
 ```
@@ -119,7 +119,7 @@ Before execution, the allowance should be increased.
     "send_from": {
         "owner": "<HumanAddr>",
         "recipient": "<HumanAddr>",
-        "amount": 123123,
+        "amount": "123123",
         "msg": "<base64_encoded_json_message>"
     }
 }
@@ -133,7 +133,7 @@ Burns token from token supply, whose owner is not same as the contract executor.
 {
     "burn_from": {
         "owner": "<HumanAddr>",
-        "amount": 123123
+        "amount": "123123"
     }
 }
 ```
