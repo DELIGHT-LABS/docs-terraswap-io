@@ -12,7 +12,7 @@ Therefore, for project developers, if you want to unify your asset on Terraswap 
 ---
 > **NOTE**
 >
-> As Terraswap aims & is a pure DEX, Terraswap does not judge whether the asset is a genuine or scam. All assets should be treated equally & all users have responsible for their transactions on Terraswap. Terraswap team has been exempted from any loss from its app usage.
+> As Terraswap aims & is a pure DEX, Terraswap does not judge whether the asset is a genuine or scam. All assets should be treated equally & all users have responsible for their transactions on Terraswap. Terraswap team has been exempted from any loss from its app usage. Be sure that all users are trading the correct token, always check the address before buying.
 ---
 
 ## Find Terra Asset repository
@@ -24,7 +24,7 @@ Please find it on [`assets` repository](https://github.com/terra-money/assets)
 1. If your asset is Terra native
     - Modify `cw20/token.js`
     - Add protocol, symbol, name, token contract address, the path of the icon, and decimals
-    - [Example](https://github.com/terra-money/assets/pull/99)
+    - [Example](https://github.com/terra-money/assets/blob/master/cw20/tokens.js)
 
 1. If your asset is IBC token
     - Modify `ibc/token.js`
