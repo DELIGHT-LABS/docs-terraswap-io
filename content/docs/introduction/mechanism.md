@@ -29,6 +29,6 @@ To determine the proper value of {{< katex >}}B_{out}{{< /katex >}} given the tr
 
 Terraswap is able to execute trades with only the current balances of the pool and the number of incoming tokens. The market price is encoded the number of pool's target tokens divided by the source asset (also called the pool ratio). The spread between the executed and the expected trade is:
 
-{{< katex display >}}\text{spread} = \max\bigg(\frac{YA_{\text{in}}}{X+A_{\text{in}}} - \frac{YA_{\text{in}}}{X}, 0\bigg){{< /katex >}}
+{{< katex display >}}\text{spread} = \frac{YA_{\text{in}}}{X} - \frac{YA_{\text{in}}}{X+A_{\text{in}}}{{< /katex >}}
 
 When a pool has large balances of tokens on both sides from liquidity providers, the spread becomes smaller and helps the pool execute closer to its reported price of {{< katex >}}Y/X{{< /katex >}}.
