@@ -19,6 +19,7 @@ headless: true
 - [CW20 Token]({{< relref "/docs/reference/token" >}})
 - [Pair]({{< relref "/docs/reference/pair" >}})
 - [Factory]({{< relref "/docs/reference/factory" >}})
+- [Router]({{< relref "/docs/reference/router" >}})
 <br />
 - **Resources**
 - [Contract addresses]({{< relref "/docs/contract_resources/contract_addresses" >}})

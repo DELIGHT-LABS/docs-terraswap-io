@@ -45,6 +45,7 @@ Asset can be both of contract-based token and native token. It can be distinguis
 
 Swap between the given two tokens. It can be thought of as trade.<br />
 `offer_asset` is your source asset and `to` is your destination token contract.<br />
+`Binary()` means that this JSON message should be encoded into Base64.<br />
 
 
 ```json
