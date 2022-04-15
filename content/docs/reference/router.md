@@ -11,7 +11,8 @@ bookFlatSection: true
 
 Multi-hop swap operations via `native_swap`, `terra_swap`, `loop` and `astroport`<br />
 
-Offer tokens are native token swap (KRT => UST => mABNB)
+Case 1) The first source token is a native token (KRT => UST => mABNB)<br />
+
 ```json
 {
   "execute_swap_operations":{
@@ -42,7 +43,10 @@ Offer tokens are native token swap (KRT => UST => mABNB)
 }
 ```
 
-Offer tokens are cw20 swap (ANC => UST => KRT)
+Case 2) The first source token is a CW20 token (ANC => UST => KRT)<br />
+
+Note: `Binary()` means that this JSON message should be encoded into Base64.<br />
+
 ```json
 {
   "send": {
