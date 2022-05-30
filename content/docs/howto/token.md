@@ -13,7 +13,7 @@ Except any function of your token itself contains more than asset, we recommend 
 ---
 > **NOTE**
 >
-> We strongly recommend to create by the pre-stored binary. (hereinafter, referred to as `CODE ID : 3`) \
+> We strongly recommend to create by the pre-stored binary. (hereinafter, referred to as `CODE ID : 4` of Terra 2.0 & `CODE ID : 3` of Terra classic) \
 > There are some advantages below:
 >
 > * These token, pair contract codes are well audited by foundation. Don't have to audit for yours additionally.
@@ -26,8 +26,8 @@ Except any function of your token itself contains more than asset, we recommend 
 
 ### 1. Using deployed token (recommended)
 
-The standard CW20 token is already stored in Terra network as code ID `3`.\
-The code is wrapped based on cw20 [v0.8.0](https://docs.rs/cw20/0.8.0/cw20/index.html) \
+The standard CW20 token is already stored in Terra 2.0 network as code ID `4`, and Terra classic as `3`.\
+The code is wrapped based on cw20 [v0.11.0](https://docs.rs/cw20/0.11.0/cw20/index.html) \
 Please check [here]({{< relref "/docs/contract_resources/contract_addresses" >}}) for the more addresses.
 
 You may instantiate your own token using the JSON as follows:
@@ -36,7 +36,7 @@ You may instantiate your own token using the JSON as follows:
 {
     "name": "yout_token_name",
     "symbol": "SYMBOL",
-    "decimals": 3,
+    "decimals": 6,
     "initial_balances": [
         {
             "address": "terraaddress0001asdfsdfbqwer...",

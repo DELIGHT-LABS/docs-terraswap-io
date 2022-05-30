@@ -8,7 +8,7 @@ bookFlatSection: true
 ## 1) Instanciation by code ID
 
 A pre-stored pair is used in this procedure. Token contract should be instantiated in advance.\
-If you use the foundation's token factory contract, the code ID is `5`.
+If you use the foundation's token factory contract, the code ID is `xx` of Terra 2.0 & `5` of Terra classic.
 
 The JSON parameter of instantiation is as below:
 
@@ -102,7 +102,7 @@ Factory contract is instantiated and a new pair is created.
 
 ## 2) Instanciation by contract address
 
-If you use the foundation's token factory contract, the contract address is `terra1ulgw0td86nvs4wtpsc80thv6xelk76ut7a7apj`.
+If you use the foundation's token factory contract, the contract address is `terra1xxxxx` of Terra 2.0 & `terra1ulgw0td86nvs4wtpsc80thv6xelk76ut7a7apj` of Terra classic.
 
 You may organize the JSON as below:
 

@@ -1,3 +1,5 @@
 public/
 resources/
 server
+
+.hugo_build.lock
