@@ -13,7 +13,7 @@ Except any function of your token itself contains more than asset, we recommend 
 ---
 > **NOTE**
 >
-> We strongly recommend to create by the pre-stored binary. (hereinafter, referred to as `CODE ID : 3`) \
+> We strongly recommend to create by the pre-stored binary.\
 > There are some advantages below:
 >
 > * These token, pair contract codes are well audited by foundation. Don't have to audit for yours additionally.
@@ -24,10 +24,10 @@ Except any function of your token itself contains more than asset, we recommend 
 
 ## How to mint
 
-### 1. Using deployed token (recommended)
+### 1. Using deployed token factory (recommended)
 
-The standard CW20 token is already stored in Terra network as code ID `3`.\
-The code is wrapped based on cw20 [v0.8.0](https://docs.rs/cw20/0.8.0/cw20/index.html) \
+The standard CW20 token is already stored in Terra 2.0 network.\
+The code is wrapped based on cw20 [v0.13.2](https://docs.rs/cw20/0.13.2/cw20/index.html) \
 Please check [here]({{< relref "/docs/contract_resources/contract_addresses" >}}) for the more addresses.
 
 You may instantiate your own token using the JSON as follows:
@@ -36,7 +36,7 @@ You may instantiate your own token using the JSON as follows:
 {
     "name": "yout_token_name",
     "symbol": "SYMBOL",
-    "decimals": 3,
+    "decimals": 6,
     "initial_balances": [
         {
             "address": "terraaddress0001asdfsdfbqwer...",
@@ -71,6 +71,14 @@ Then, you may find the address of your contract from:
     "value": "terra18vd8fpwxzck93qlwghaj6arh4p7c5n896xzem5"
 }
 ```
+
+---
+> **NOTE**
+>
+> You can easily do on [Terra station web application](https://station.terra.money/contract), too!
+> Search by the contract address, input the organized JSON, and execute!
+>
+---
 
 ### 2. Implement yourself
 

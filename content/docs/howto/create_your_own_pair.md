@@ -5,11 +5,11 @@ bookFlatSection: true
 
 # Create Your Own Pair
 
+PLEASE CHECK [HERE](#important---only-for-terra-20) for additional action on Terra 2.0
+
 ## 1) Instanciation by code ID
 
 A pre-stored pair is used in this procedure. Token contract should be instantiated in advance.\
-If you use the foundation's token factory contract, the code ID is `5`.
-
 The JSON parameter of instantiation is as below:
 
 ```json
@@ -100,9 +100,17 @@ Copy this encoded string into `init_hook.msg` of the JSON, which was provided at
 
 Factory contract is instantiated and a new pair is created.
 
+---
+> **NOTE**
+>
+> You can easily do on [Terra station web application](https://station.terra.money/contract), too!
+> Search by the contract address, input the organized JSON, and execute!
+>
+---
+
 ## 2) Instanciation by contract address
 
-If you use the foundation's token factory contract, the contract address is `terra1ulgw0td86nvs4wtpsc80thv6xelk76ut7a7apj`.
+If you use the Terraswap's token factory contract, the contract address is `terra1466nf3zuxpya8q9emxukd7vftaf6h4psr0a07srl5zw74zh84yjqxl5qul` of Terra 2.0 & `terra1ulgw0td86nvs4wtpsc80thv6xelk76ut7a7apj` of Terra classic.
 
 You may organize the JSON as below:
 
@@ -132,3 +140,10 @@ This is a JSON constructor of pair contract.
   - `asset_infos[x].native_token.denom`: Terra native token **denominator** is entered here.
 
 Then, you may execute the contract with the organized JSON above.
+
+## IMPORTANT - Only for Terra 2.0
+
+PLEASE BE AWARE to send a tiny number (like 0.0001) of Luna when you create a pair that one of the asset is native(Luna) or IBC.\
+It is used of the contract for validating whether the token exists or not.
+
+If you are working on [Terra station web application](https://station.terra.money/contract), just add a tiny number of Luna (like 0.0001) and it would works!
