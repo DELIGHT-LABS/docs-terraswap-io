@@ -5,11 +5,11 @@ bookFlatSection: true
 
 # Create Your Own Pair
 
+PLEASE CHECK [HERE](#important---only-for-terra-20) for additional action on Terra 2.0
+
 ## 1) Instanciation by code ID
 
 A pre-stored pair is used in this procedure. Token contract should be instantiated in advance.\
-If you use the foundation's token factory contract, the code ID is `5` of Terra 2.0 & `5` of Terra classic.
-
 The JSON parameter of instantiation is as below:
 
 ```json
@@ -140,3 +140,10 @@ This is a JSON constructor of pair contract.
   - `asset_infos[x].native_token.denom`: Terra native token **denominator** is entered here.
 
 Then, you may execute the contract with the organized JSON above.
+
+## IMPORTANT - Only for Terra 2.0
+
+PLEASE BE AWARE to send a tiny number (like 0.0001) of Luna when you create a pair that one of the asset is native(Luna) or IBC.\
+It is used of the contract for validating whether the token exists or not.
+
+If you are working on [Terra station web application](https://station.terra.money/contract), just add a tiny number of Luna (like 0.0001) and it would works!
