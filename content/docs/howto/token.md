@@ -24,7 +24,7 @@ Except any function of your token itself contains more than asset, we recommend 
 
 ## How to mint
 
-### 1. Using deployed token (recommended)
+### 1. Using deployed token factory (recommended)
 
 The standard CW20 token is already stored in Terra 2.0 network as code ID `4`, and Terra classic as `3`.\
 The code is wrapped based on cw20 [v0.11.0](https://docs.rs/cw20/0.11.0/cw20/index.html) \
@@ -71,6 +71,14 @@ Then, you may find the address of your contract from:
     "value": "terra18vd8fpwxzck93qlwghaj6arh4p7c5n896xzem5"
 }
 ```
+
+---
+> **NOTE**
+>
+> You can easily do on [Terra station web application](https://station.terra.money/contract), too!
+> Search by the contract address, input the organized JSON, and execute!
+>
+---
 
 ### 2. Implement yourself
 

@@ -40,6 +40,6 @@
 - Factory contract address: `terra18qpjm4zkvqnpjpw0zn0tdr8gdzvt8au35v45xf`
 - Router contract address: `terra1c58wrdkyc0ynvvxcv834kz65nfsxmw2w0pwusq`
 
-### Whitelisted token
+## Whitelisted token
 - [cw20](https://github.com/terra-money/assets/blob/master/cw20/tokens.js)
 - [ibc](https://github.com/terra-money/assets/blob/master/ibc/tokens.js)
