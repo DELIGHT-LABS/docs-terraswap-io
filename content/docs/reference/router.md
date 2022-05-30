@@ -168,7 +168,7 @@ ex) https://bombay-fcd.terra.dev/wasm/contracts/terra1c58wrdkyc0ynvvxcv834kz65nf
 
 ### Execute swap operations
 
-Multi-hop swap operations via `native_swap`, `terra_swap`, `loop` and `astroport`<br />
+Multi-hop swap operations via `terra_swap`.<br />
 
 Case 1) The first source token is a native token (Luna => DELIGHT => TNT)<br />
 
@@ -210,7 +210,7 @@ Case 1) The first source token is a native token (Luna => DELIGHT => TNT)<br />
 }
 ```
 
-Case 2) The first source token is a CW20 token (ANC => UST => KRT)<br />
+Case 2) The first source token is a CW20 token (DELIGHT => Luna => TNT)<br />
 
 Note: `Binary()` means that this JSON message should be encoded into Base64.<br />
 
@@ -218,36 +218,36 @@ Note: `Binary()` means that this JSON message should be encoded into Base64.<br 
 {
   "send": {
     "amount": "100000000",
-    "contract": "terra14z80rwpd0alzj4xdtgqdmcqt9wd9xj5ffd60wp",
+    "contract": "terra1cl0kw9axzpzkw58snj6cy0hfp0xp8xh9tudpw2exvzuupn3fafwqqhjc24",
     "msg": Binary({
         "execute_swap_operations":{
             "operations":[
                 {
                     "terra_swap":{
-                    "offer_asset_info":{
-                        "native_token":{
-                            "denom":"uluna"
+                        "offer_asset_info":{
+                            "token":{
+                                "contract_addr":"terra1cl0kw9axzpzkw58snj6cy0hfp0xp8xh9tudpw2exvzuupn3fafwqqhjc24"
+                            }
+                        },
+                        "ask_asset_info":{
+                            "native_token":{
+                                "denom":"uluna"
+                            }
                         }
-                    },
-                    "ask_asset_info":{
-                        "token":{
-                            "contract_addr":"terra1cl0kw9axzpzkw58snj6cy0hfp0xp8xh9tudpw2exvzuupn3fafwqqhjc24"
-                        }
-                    }
                     }
                 },
                 {
                     "terra_swap":{
-                    "offer_asset_info":{
-                        "token":{
-                            "contract_addr":"terra1cl0kw9axzpzkw58snj6cy0hfp0xp8xh9tudpw2exvzuupn3fafwqqhjc24"
+                        "offer_asset_info":{
+                            "native_token":{
+                                "denom":"uluna"
+                            }
+                        },
+                        "ask_asset_info":{
+                            "token":{
+                                "contract_addr":"terra1qnypzwqa03h8vqs0sxjp8hxw0xy5zfwyax26jgnl5k4lw92tjw0scdkrzm"
+                            }
                         }
-                    },
-                    "ask_asset_info":{
-                        "token":{
-                            "contract_addr":"terra1qnypzwqa03h8vqs0sxjp8hxw0xy5zfwyax26jgnl5k4lw92tjw0scdkrzm"
-                        }
-                    }
                     }
                 }
             ],
@@ -259,9 +259,9 @@ Note: `Binary()` means that this JSON message should be encoded into Base64.<br 
 
 ## Query
 
-
 ### Simulate swap operations
-Number of KRT that can be get through 10 mABNB <br>
+
+Number of TNT that can be get through 10 Luna <br>
 ```json
 {
     "simulate_swap_operations":{
@@ -269,30 +269,30 @@ Number of KRT that can be get through 10 mABNB <br>
         "operations":[
             {
                 "terra_swap":{
-                "offer_asset_info":{
-                    "native_token":{
-                        "denom":"uluna"
+                    "offer_asset_info":{
+                        "native_token":{
+                            "denom":"uluna"
+                        }
+                    },
+                    "ask_asset_info":{
+                        "token":{
+                            "contract_addr":"terra1cl0kw9axzpzkw58snj6cy0hfp0xp8xh9tudpw2exvzuupn3fafwqqhjc24"
+                        }
                     }
-                },
-                "ask_asset_info":{
-                    "token":{
-                        "contract_addr":"terra1cl0kw9axzpzkw58snj6cy0hfp0xp8xh9tudpw2exvzuupn3fafwqqhjc24"
-                    }
-                }
                 }
             },
             {
                 "terra_swap":{
-                "offer_asset_info":{
-                    "token":{
-                        "contract_addr":"terra1cl0kw9axzpzkw58snj6cy0hfp0xp8xh9tudpw2exvzuupn3fafwqqhjc24"
+                    "offer_asset_info":{
+                        "token":{
+                            "contract_addr":"terra1cl0kw9axzpzkw58snj6cy0hfp0xp8xh9tudpw2exvzuupn3fafwqqhjc24"
+                        }
+                    },
+                    "ask_asset_info":{
+                        "token":{
+                            "contract_addr":"terra1qnypzwqa03h8vqs0sxjp8hxw0xy5zfwyax26jgnl5k4lw92tjw0scdkrzm"
+                        }
                     }
-                },
-                "ask_asset_info":{
-                    "token":{
-                        "contract_addr":"terra1qnypzwqa03h8vqs0sxjp8hxw0xy5zfwyax26jgnl5k4lw92tjw0scdkrzm"
-                    }
-                }
                 }
             }
         ]
@@ -302,8 +302,7 @@ Number of KRT that can be get through 10 mABNB <br>
 ex) https://bombay-fcd.terra.dev/wasm/contracts/terra1c58wrdkyc0ynvvxcv834kz65nfsxmw2w0pwusq/store?query_msg={%22simulate_swap_operations%22:{%22offer_amount%22:%2210000000%22,%22operations%22:[{%22terra_swap%22:{%22offer_asset_info%22:{%22token%22:{%22contract_addr%22:%22terra1747mad58h0w4y589y3sk84r5efqdev9q4r02pc%22}},%22ask_asset_info%22:{%22native_token%22:{%22denom%22:%22uusd%22}}}},{%22native_swap%22:{%22offer_denom%22:%22uusd%22,%22ask_denom%22:%22ukrw%22}}]}}
 
 ### Reverse simulate swap operations
-Number of ANC needed to get 10Luna <br>
-** Native swap is not supported. <br>
+Number of Luna needed to get 10 TNT <br>
 ```json
 {
     "reverse_simulate_swap_operations":{
@@ -311,30 +310,30 @@ Number of ANC needed to get 10Luna <br>
         "operations":[
             {
                 "terra_swap":{
-                "offer_asset_info":{
-                    "native_token":{
-                        "denom":"uluna"
+                    "offer_asset_info":{
+                        "native_token":{
+                            "denom":"uluna"
+                        }
+                    },
+                    "ask_asset_info":{
+                        "token":{
+                            "contract_addr":"terra1cl0kw9axzpzkw58snj6cy0hfp0xp8xh9tudpw2exvzuupn3fafwqqhjc24"
+                        }
                     }
-                },
-                "ask_asset_info":{
-                    "token":{
-                        "contract_addr":"terra1cl0kw9axzpzkw58snj6cy0hfp0xp8xh9tudpw2exvzuupn3fafwqqhjc24"
-                    }
-                }
                 }
             },
             {
                 "terra_swap":{
-                "offer_asset_info":{
-                    "token":{
-                        "contract_addr":"terra1cl0kw9axzpzkw58snj6cy0hfp0xp8xh9tudpw2exvzuupn3fafwqqhjc24"
+                    "offer_asset_info":{
+                        "token":{
+                            "contract_addr":"terra1cl0kw9axzpzkw58snj6cy0hfp0xp8xh9tudpw2exvzuupn3fafwqqhjc24"
+                        }
+                    },
+                    "ask_asset_info":{
+                        "token":{
+                            "contract_addr":"terra1qnypzwqa03h8vqs0sxjp8hxw0xy5zfwyax26jgnl5k4lw92tjw0scdkrzm"
+                        }
                     }
-                },
-                "ask_asset_info":{
-                    "token":{
-                        "contract_addr":"terra1qnypzwqa03h8vqs0sxjp8hxw0xy5zfwyax26jgnl5k4lw92tjw0scdkrzm"
-                    }
-                }
                 }
             }
         ]
