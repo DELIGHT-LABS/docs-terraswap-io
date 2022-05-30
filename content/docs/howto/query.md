@@ -9,23 +9,23 @@ bookFlatSection: true
 
 - Command line
 ```bash
-terrad query wasm contract-store <contract_address> '<JSON_formed_message>'
+terrad query wasm contract-state smart <contract_address> '<JSON_formed_message>'
 ```
 ex)
 
 ```bash
-terrad query wasm contract-store terra18vd8fpwxzck93qlwghaj6arh4p7c5n896xzem5 '{"balance":{"address": "terra1wxe503thjmapngtnyqarxrc4jy80vf800vf0cy"}}'
+terrad query wasm contract-state smart terra1466nf3zuxpya8q9emxukd7vftaf6h4psr0a07srl5zw74zh84yjqxl5qul '{"pairs":{}}'
 ```
 
 - RESTFul API
 ```URL
-<light_clinet_address>/terra/wasm/v1beta1/contracts/<contract_address>/store?query_msg=<JSON_formed_message_with_base64>
+<light_clinet_address>/cosmwasm/wasm/v1/contract/<contract_address>/smart/<JSON_formed_message_with_base64>
 ```
 
 ex)
 
 ```URL
-https://bombay-lcd.terra.dev/terra/wasm/v1beta1/contracts/terra18qpjm4zkvqnpjpw0zn0tdr8gdzvt8au35v45xf/store?query_msg=eyJwYWlycyI6e319
+https:://lcd.terra.dev/cosmwasm/wasm/v1/contract/terra1466nf3zuxpya8q9emxukd7vftaf6h4psr0a07srl5zw74zh84yjqxl5qul/smart/eyJwYWlycyI6e319
 ```
 
 ## How to oragnize query message
