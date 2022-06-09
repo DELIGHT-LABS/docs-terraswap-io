@@ -9,12 +9,12 @@ bookFlatSection: true
 
 ### Transfer
 
-Transfer token from the sender user to the recipient.
+Transfer tokens from a transaction executor to `recipient`.
 
 ```json
 {
     "transfer": {
-        "recipient": "<HumanAddr>",
+        "recipient": "<Addr>",
         "amount": "123123",
     }
 }
@@ -22,7 +22,7 @@ Transfer token from the sender user to the recipient.
 
 ### Burn
 
-Burn tokens from total supply.
+Reduce tokens from the balance of a transaction executor.
 
 ```json
 {
@@ -34,14 +34,14 @@ Burn tokens from total supply.
 
 ### Send
 
-Work same as transfer but it sends token to contract, not user address. <br />
-And, it triggers given message in `msg`. The given message should be executable on recipient contract.<br />
-`msg` is base64-endcoded JSON string.
+Work same as `transfer` but it sends tokens to `contract`, not an user address.<br />
+When processing a transaction, it triggers the given message in `msg`. The given message should be executable on its recipient `contract`.<br />
+`msg` is base64-encoded JSON string.
 
 ```json
 {
     "send": {
-        "contract": "<HumanAddr>",
+        "contract": "<Addr>",
         "amount": "123123",
         "msg": "1234erwfaffaesfaef="
     }
@@ -50,27 +50,26 @@ And, it triggers given message in `msg`. The given message should be executable 
 
 ### Mint
 
-It produces token and transfer to given recipient.
+Issue `amount` of tokens and transfer them to the given `recipient`.
 
 ```json
 {
     "mint": {
-        "recipient": "<HumanAddr>",
+        "recipient": "<Addr>",
         "amount": "123123"
     }
 }
 ```
 
-### Increase/Decrease allowance
+### Increase/Decrease Allowance
 
-It increases / decreases allowance of withdrawable token from the executor.<br />
-After execution, user token can be transferred by spender's contract method execution, not only `transfer`.<br />
-And it expires on the given time point.
+Increases/Decreases the allowance for `spender` to handle specific `amount` of token.<br />
+After execution, the token can be transferred by executing a transaction from `spender`. Its transferability expires on the given time point.
 
 ```json
 {
     "increase_allowance": {
-        "spender": "<HumanAddr>",
+        "spender": "<Addr>",
         "amount": "123123",
         "expires": {
             "at_height": 123123,
@@ -86,7 +85,7 @@ And it expires on the given time point.
 ```json
 {
     "decrease_allowance": {
-        "spender": "<HumanAddr>",
+        "spender": "<Addr>",
         "amount": "123123",
         "expires": {
             "at_height": 123123,
@@ -99,16 +98,15 @@ And it expires on the given time point.
 }
 ```
 
-### Transfer from / send from
+### Transfer from/Send from
 
-It transfers token from owner to recipient, which not owner nor recipeint are not the contract executor.<br />
-Before execution, the allowance should be increased.
+Transfers `amount` of token from `owner` to `recipient`. The allowance should be increased before execution.
 
 ```json
 {
     "transfer_from": {
-        "owner": "<HumanAddr>",
-        "recipient": "<HumanAddr>",
+        "owner": "<Addr>",
+        "recipient": "<Addr>",
         "amount": "123123",
     }
 }
@@ -117,8 +115,8 @@ Before execution, the allowance should be increased.
 ```json
 {
     "send_from": {
-        "owner": "<HumanAddr>",
-        "recipient": "<HumanAddr>",
+        "owner": "<Addr>",
+        "recipient": "<Addr>",
         "amount": "123123",
         "msg": "<base64_encoded_json_message>"
     }
@@ -127,12 +125,12 @@ Before execution, the allowance should be increased.
 
 ### Burn from
 
-Burns token from token supply, whose owner is not same as the contract executor.
+Burn a specific `amount` of token from `owner`'s balance.
 
 ```json
 {
     "burn_from": {
-        "owner": "<HumanAddr>",
+        "owner": "<Addr>",
         "amount": "123123"
     }
 }
@@ -140,22 +138,22 @@ Burns token from token supply, whose owner is not same as the contract executor.
 
 ## Query
 
-### Get balance
+### Get Balance
 
-Check the balance of the given address
+Check the token `balance` of the given `address`
 
 ```json
 {
     "balance": {
-        "address": "<HumanAddr>"
+        "address": "<Addr>"
     }
 }
 ```
 
-### Token info
+### Token Info
 
 Check metadata of the contract.<br />
-It check:
+It checks:
 - Name
 - Decimals
 - Total supply
@@ -167,7 +165,7 @@ It check:
 }
 ```
 
-### Get minter
+### Minter
 
 ```json
 {
@@ -175,41 +173,41 @@ It check:
 }
 ```
 
-### Get allowance
+### Allowance
 
-Get allowance list of the given owner & spender.
+Get the allowance list of the given `owner` and `spender`.
 
 ```json
 {
     "allowance": {
-        "owner": "<HumanAddr>",
-        "spender": "<HumanAddr>"
+        "owner": "<Addr>",
+        "spender": "<Addr>"
     }
 }
 ```
 
-### Get all allowance
+### All Allowances
 
-Get list of all allowance of the token.
+Get the list of all allowances of the token that `owner` received and not expired.
 
 ```json
 {
     "all_allowances": {
-        "owner": "<HumanAddr>",
-        "start_after": "<HumanAddr>", // optional
+        "owner": "<Addr>",
+        "start_after": "<Addr>", // optional
         "limit": 1 // optional
     }
 }
 ```
 
-### Accounts list that have the token
+### All Accounts
 
-Get all accounts list of the token holder.
+Get all account list of the token holder.
 
 ```json
 {
     "all_accounts": {
-        "start_after": "<HumanAddr>", // optional
+        "start_after": "<Addr>", // optional
         "limit": 1 // optional
     }
 }

@@ -5,22 +5,30 @@ bookFlatSection: true
 
 # Factory
 
-This contract registers the relation between your token and others. <br />
-It uses the pre-stored pair contract binary and instantiate it. So, you don't have to execute pair contract additionally.
+The factory contract registers a pair between two tokens.
+It uses the pre-stored pair contract binary and instantiates it so that users do not need to execute a pair contract by themselves.
 
 ## Transaction
 
 ### Create pair
 
-Instantiate pair from uploaded WASM binary. Please check [this document]({{< relref "/docs/howto/create_your_own_pair" >}}) in detail usage.
+Instantiate a pair from uploaded WASM binary. Please check [this document]({{< relref "/docs/howto/create_your_own_pair" >}}) in detail usage.
 
 ```json
 {
-  "pair_code_id": "1",
-  "token_code_id": "2",
-  "init_hook": {
-    "msg": "<base64_encoded_json_string>",
-    "contract_addr": "<HumanAddr>"
+  "create_pair": {
+    "asset_infos": [
+      {
+        "token": {
+          "contract_addr": "terra..."
+        }
+      },
+      {
+        "native_token": {
+          "denom": "uluna"
+        }
+      }
+    ]
   }
 }
 ```
@@ -43,7 +51,7 @@ Instantiate pair from uploaded WASM binary. Please check [this document]({{< rel
         "asset_infos": [
             {
                 "token": {
-                    "contract_addr": "<HumanAddr>"
+                    "contract_addr": "<Addr>"
                 }
             },
             {
@@ -61,10 +69,10 @@ Instantiate pair from uploaded WASM binary. Please check [this document]({{< rel
 ```json
 {
     "pairs": {
-        "start_after": [ //optional
+        "start_after": [ // optional
             {
                 "token": {
-                    "contract_addr": "<HumanAddr>"
+                    "contract_addr": "<Addr>"
                 }
             },
             {
@@ -73,7 +81,7 @@ Instantiate pair from uploaded WASM binary. Please check [this document]({{< rel
                 }
             }
         ],
-        "limit": 10 //optional, default=10, max=30
+        "limit": 10 // optional, default=10, max=30
     }
 }
 ```

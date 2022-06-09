@@ -7,17 +7,17 @@ bookFlatSection: true
 
 ## Transaction
 
-### Provide liquidity / Withdraw
+### Provide Liquidity / Withdraw
 
-As the swap ratio is stated as [here]({{< relref "/docs/introduction/mechanism" >}}), the size of the pool is related with the difference of swap ratio. The ratio goes stable if the size of the pool increases, and vice versa. Otherwise, LP provider needs more tokens for adjusting the price in bigger pool. It means that the market loses elastic. LP provider adjusts this market by providing & withdraw the liquidity within this trade-off.
+As the swap ratio is stated [here]({{< relref "/docs/introduction/mechanism" >}}), the size of a pool is related to its swap ratio. The ratio will get stable if the size of the pool increases, and vice versa. Otherwise, liquidity providers need more tokens to adjust the price in a bigger pool and it means that the market loses elasticity. The providers adjust their markets by providing and withdrawing liquidity within a trade-off.
 
-#### Provide liquidity
+#### Provide Liquidity
 
-Contribute to pool by sending sender's token pair. Not only increasing its size, but also it affects to the swap ratio.
+Contribute to the pool by sending a pair of tokens. The transaction increases the pool size.
 
 Execute this message by the **Pair contract** address!
 
-If you provide cw20, first increase your allowance. [Execute `IncreaseAllowance`]({{< relref "/docs/reference/token#increasedecrease-allowance" >}})
+If you are trying to provide cw20 token, increase your allowance first. [Execute `IncreaseAllowance`]({{< relref "/docs/reference/token#increasedecrease-allowance" >}})
 
 ```json
 {
@@ -26,7 +26,7 @@ If you provide cw20, first increase your allowance. [Execute `IncreaseAllowance`
       {
         "info" : {
             "token": {
-                "contract_addr": "<HumanAddr>"
+                "contract_addr": "<Addr>"
             }
         },
         "amount": "10"
@@ -48,7 +48,7 @@ If you provide cw20, first increase your allowance. [Execute `IncreaseAllowance`
 
 Withdraw your tokens and decrease the size of the pool.
 
-Execute this message by the **Liquidity token contract** address! Not token contract, not pair contract neither!
+Execute the below message via the **Liquidity token contract** address! Not token contract, nor pair contract!
 
 ```json
 {
@@ -68,13 +68,13 @@ In `send.msg`, you may decode this JSON string into base64 encoding.
 }
 ```
 
-Then, the liquidity token contract calculates the portion of your liquidity token comparing to the total supply, and withdraw the pairs.
+As a result, the contract calculates the portion of your liquidity token compared to the total supply, and withdraws them.
 
 ## Query
 
 ### Pool
 
-Pool query message returns the amount of the tokens in the pool from the given pair contract address.
+The pool query message returns the amount of the tokens in the pool from the given pair contract address.
 
 ```json
 {
@@ -109,15 +109,15 @@ Response:
   }
 }
 ```
-- ex) Luna <> DELIGHT https://pisco-lcd.terra.dev/cosmwasm/wasm/v1/contract/terra12gyq86zdaef9hafs6a6y24xqxgjyzh4m5a224tenlchj2ekgf5tsv94gwj/smart/eyJwb29sIjp7fX0=
+- ex) LUNA <> DELIGHT https://pisco-lcd.terra.dev/cosmwasm/wasm/v1/contract/terra12gyq86zdaef9hafs6a6y24xqxgjyzh4m5a224tenlchj2ekgf5tsv94gwj/smart/eyJwb29sIjp7fX0=
 
-### Simulation / Reverse simulation
+### Simulation / Reverse Simulation
 
-Simulation works for guessing how much you will be swapped with your token.
+Simulation works for guessing how much you will get by swapping with your token.
 
-If you want to know how much the target token will be given from source token, use `simulation`. Or if you want to derive the number of source token from the number of target token, use this query message.
+In case of you want to know how much the target token will be given from the source token, use `simulation`. Likewise, `reverse_simulation` can let you derive the number of source token from the number of target token.
 
-#### Simulation request
+#### Simulation Request
 
 ```json
 {
@@ -134,7 +134,7 @@ If you want to know how much the target token will be given from source token, u
 }
 ```
 
-#### Simulation response
+#### Simulation Response
 
 ```json
 {
@@ -145,9 +145,9 @@ If you want to know how much the target token will be given from source token, u
   }
 }
 ```
-- ex) Luna <> DELIGHT https://pisco-lcd.terra.dev/cosmwasm/wasm/v1/contract/terra12gyq86zdaef9hafs6a6y24xqxgjyzh4m5a224tenlchj2ekgf5tsv94gwj/smart/ewogICJzaW11bGF0aW9uIjogewogICAgIm9mZmVyX2Fzc2V0IjogewogICAgICAiYW1vdW50IjoiMTAwMDAwMCIsCiAgICAgICJpbmZvIjogewogICAgICAgICJuYXRpdmVfdG9rZW4iOiB7CiAgICAgICAgICAiZGVub20iOiJ1bHVuYSIKICAgICAgICB9CiAgICAgIH0KICAgIH0KICB9Cn0=
+- ex) LUNA <> DELIGHT https://pisco-lcd.terra.dev/cosmwasm/wasm/v1/contract/terra12gyq86zdaef9hafs6a6y24xqxgjyzh4m5a224tenlchj2ekgf5tsv94gwj/smart/ewogICJzaW11bGF0aW9uIjogewogICAgIm9mZmVyX2Fzc2V0IjogewogICAgICAiYW1vdW50IjoiMTAwMDAwMCIsCiAgICAgICJpbmZvIjogewogICAgICAgICJuYXRpdmVfdG9rZW4iOiB7CiAgICAgICAgICAiZGVub20iOiJ1bHVuYSIKICAgICAgICB9CiAgICAgIH0KICAgIH0KICB9Cn0=
 
-#### Reverse simulation request
+#### Reverse Simulation Request
 
 ```json
 {
@@ -163,7 +163,7 @@ If you want to know how much the target token will be given from source token, u
   }
 }
 ```
-#### Reverse simulation response
+#### Reverse Simulation Response
 ```json
 {
   "data": {
@@ -173,4 +173,4 @@ If you want to know how much the target token will be given from source token, u
   }
 }
 ```
-- ex) Luna <> DELIGHT https://pisco-lcd.terra.dev/cosmwasm/wasm/v1/contract/terra12gyq86zdaef9hafs6a6y24xqxgjyzh4m5a224tenlchj2ekgf5tsv94gwj/smart/ewogICJyZXZlcnNlX3NpbXVsYXRpb24iOnsKICAgICJhc2tfYXNzZXQiOiB7CiAgICAgICJhbW91bnQiOiIxMDAwMDAwIiwKICAgICAgImluZm8iOiB7CiAgICAgICAgIm5hdGl2ZV90b2tlbiI6IHsKICAgICAgICAgICJkZW5vbSI6ICJ1bHVuYSIKICAgICAgICB9CiAgICAgIH0KICAgIH0KICB9Cn0=
+- ex) LUNA <> DELIGHT https://pisco-lcd.terra.dev/cosmwasm/wasm/v1/contract/terra12gyq86zdaef9hafs6a6y24xqxgjyzh4m5a224tenlchj2ekgf5tsv94gwj/smart/ewogICJyZXZlcnNlX3NpbXVsYXRpb24iOnsKICAgICJhc2tfYXNzZXQiOiB7CiAgICAgICJhbW91bnQiOiIxMDAwMDAwIiwKICAgICAgImluZm8iOiB7CiAgICAgICAgIm5hdGl2ZV90b2tlbiI6IHsKICAgICAgICAgICJkZW5vbSI6ICJ1bHVuYSIKICAgICAgICB9CiAgICAgIH0KICAgIH0KICB9Cn0=

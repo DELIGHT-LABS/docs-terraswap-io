@@ -7,7 +7,7 @@ bookFlatSection: true
 
 ## Liquidity Pools
 
-Terraswap creates automated markets for pairs of tokens (or native Terra coins like UST) called **pools** which enable users to exchange one asset for the other directly on-chain. Pools maintain balances of both assets, to which users can provide liquidity in exchange for reward-bearing LP tokens. A more detailed explanation about LP tokens and their relationship with Terraswap can be found in the Uniswap docs.
+Terraswap creates automated markets for pairs of tokens (or native Terra coins like UST), which is called **pools** that enable users to exchange one asset for the other directly on-chain. Pools maintain balances of both assets, to which users can provide liquidity in exchange for reward-bearing LP tokens. There is more detailed explanation about LP tokens and their relationships to Terraswap in the Uniswap docs.
 
 ## Constant Product
 
@@ -15,7 +15,7 @@ Terraswap pools make prices based on a **constant product invariant.**
 
 {{< katex display >}}XY=k{{< /katex >}}
 
-The product of the number of tokens on each side of the pool should remain constant across trading operations (buying / selling).
+The product of the number of tokens on each side of the pool should remain constant across trading operations (buying/selling).
 
 ## Pricing
 
@@ -27,7 +27,7 @@ To determine the proper value of {{< katex >}}B_{out}{{< /katex >}} given the tr
 
 {{< katex display >}}B_{\text{out}} = \frac{YA_{\text{in}}}{X+A_{\text{in}}}{{< /katex >}}
 
-Terraswap is able to execute trades with only the current balances of the pool and the number of incoming tokens. The market price is encoded the number of pool's target tokens divided by the source asset (also called the pool ratio). The spread between the executed and the expected trade is:
+Terraswap is able to execute trades with only the current balances of the pool and the number of incoming tokens. The market price is calculated by dividing the number of pool's target token into the source asset (also called the pool ratio). The spread between the executed and the expected trade is:
 
 {{< katex display >}}\text{spread} = \frac{YA_{\text{in}}}{X} - \frac{YA_{\text{in}}}{X+A_{\text{in}}}{{< /katex >}}
 

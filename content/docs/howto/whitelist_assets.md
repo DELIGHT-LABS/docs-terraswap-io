@@ -3,23 +3,23 @@ weight: 1
 bookFlatSection: true
 ---
 
-# Whitelist your asset
+# Allowlist Your Asset
 
-Terraswap aims to be a pure DEX, that anyone can mint & list their own assets. On the contrary of that, many duplicated scams are also listed and it harms to many innocent users, especially crypto newbies. As this matter can harm to grow our ecosystem, we adopt the whitelisting system of Terra repository.
+Terraswap aims to be a pure DEX that anyone can mint and list their own assets. However, this direction may accept many scams to be listed that harms many innocent users, especially crypto newbies. As this kind of concerns grows, which can disrupt our ecosystem at last, we decided to adopt the safelisting system of the Terra repository.
 
-Therefore, for project developers, if you want to unify your asset on Terraswap with your logo, you need to whitelist your asset information on the Terra Asset repository.
+According to the above reason, project developers are required to allowlist their asset information on the Terra Asset repository so as to be a verified asset on Terraswap with its logo.
 
 ---
 > **NOTE**
 >
-> As Terraswap aims & is a pure DEX, Terraswap does not judge whether the asset is a genuine or scam. All assets should be treated equally & all users have responsible for their transactions on Terraswap. Terraswap team has been exempted from any loss from its app usage. Be sure that all users are trading the correct token, always check the address before buying.
+> As Terraswap zeros in on a pure DEX, Terraswap does not judge whether the asset is a genuine or scam by itself. All assets should be treated equally & all users have responsible for their transactions on Terraswap. Terraswap team has been exempted from any loss from its app usage. Please be sure that you are trading the correct tokens you want by checking their addresses in each transaction.
 ---
 
-## Find Terra Asset repository
+## Find Terra Asset Repository
 
 Please find it on [`assets` repository](https://github.com/terra-money/assets)
 
-## Add your asset information
+## Add Your Asset Information
 
 1. If your asset is Terra native
     - Modify `cw20/token.js`
@@ -31,12 +31,12 @@ Please find it on [`assets` repository](https://github.com/terra-money/assets)
     - Add denom, IBC path, base denom, symbol, name, and the path of the icon
     - [Example](https://github.com/terra-money/assets/blob/master/ibc/tokens.js)
 
-## Add the pair information
+## Add the Pair Information
 
 - Modify `cw20/pairs.js`
 - Add the pair contract address and its pair assets information
 - [Example](https://github.com/terra-money/assets/pull/74/files)
 
-## [OPTIONAL] Add your non-asset contract informtaion
+## [OPTIONAL] Add Your Non-asset Contract Informtaion
 
-If you have more contracts(airdrop, governance, for game playing, etc) but if it is not related your assets, you may put your information on `cw20/contracts.js`. This whitelisting is applied to [Terra finder](https://finder.terra.money/)
+If you have more contracts(airdrop, governance, for game playing, etc.) but they are not related to your assets, you may put your information on `cw20/contracts.js`. This safelisting is applied to [Terra finder](https://finder.terra.money/)

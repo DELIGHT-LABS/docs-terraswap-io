@@ -7,7 +7,7 @@ bookFlatSection: true
 
 ## Transaction
 
-### Execute swap operations
+### Execute Swap Operations
 
 Multi-hop swap operations via `native_swap`, `terra_swap`, `loop` and `astroport`<br />
 
@@ -86,8 +86,10 @@ Note: `Base64()` means that this JSON message should be encoded into Base64.<br 
 ## Query
 
 
-### Simulate swap operations
-Number of KRT that can be get through 10 mABNB <br>
+### Simulate Swap Operations
+
+Query the amount of KRT that can be attained via UST by 10 mABNB<br />
+
 ```json
 {
     "simulate_swap_operations":{
@@ -119,9 +121,11 @@ Number of KRT that can be get through 10 mABNB <br>
 ```
 ex) https://bombay-fcd.terra.dev/wasm/contracts/terra1c58wrdkyc0ynvvxcv834kz65nfsxmw2w0pwusq/store?query_msg={%22simulate_swap_operations%22:{%22offer_amount%22:%2210000000%22,%22operations%22:[{%22terra_swap%22:{%22offer_asset_info%22:{%22token%22:{%22contract_addr%22:%22terra1747mad58h0w4y589y3sk84r5efqdev9q4r02pc%22}},%22ask_asset_info%22:{%22native_token%22:{%22denom%22:%22uusd%22}}}},{%22native_swap%22:{%22offer_denom%22:%22uusd%22,%22ask_denom%22:%22ukrw%22}}]}}
 
-### Reverse simulate swap operations
-Number of ANC needed to get 10Luna <br>
-** Native swap is not supported. <br>
+### Reverse Simulate Swap Operations
+
+Query the amount of ANC needed to get 10 LUNC via UST <br />
+**Native swap is not supported.** <br />
+
 ```json
 {
     "reverse_simulate_swap_operations":{
@@ -166,11 +170,11 @@ ex) https://bombay-fcd.terra.dev/wasm/contracts/terra1c58wrdkyc0ynvvxcv834kz65nf
 
 ## Transaction
 
-### Execute swap operations
+### Execute Swap Operations
 
 Multi-hop swap operations via `terra_swap`.<br />
 
-Case 1) The first source token is a native token (Luna => DELIGHT => TNT)<br />
+Case 1) The first source token is a native token (LUNA => DELIGHT => TNT)<br />
 
 ```json
 {
@@ -210,7 +214,7 @@ Case 1) The first source token is a native token (Luna => DELIGHT => TNT)<br />
 }
 ```
 
-Case 2) The first source token is a CW20 token (DELIGHT => Luna => TNT)<br />
+Case 2) The first source token is a CW20 token (DELIGHT => LUNA => TNT)<br />
 
 Note: `Base64()` means that this JSON message should be encoded into Base64.<br />
 
@@ -259,9 +263,10 @@ Note: `Base64()` means that this JSON message should be encoded into Base64.<br 
 
 ## Query
 
-### Simulate swap operations
+### Simulate Swap Operations
 
-Number of TNT that can be get through 10 Luna <br>
+Query the amount of TNT that can be acquired via DELIGHT by offering 10 LUNA<br>
+
 ```json
 {
     "simulate_swap_operations":{
@@ -301,8 +306,10 @@ Number of TNT that can be get through 10 Luna <br>
 ```
 ex) [https://pisco-lcd.terra.dev/cosmwasm/wasm/v1/contract/terra1xp6xe6uwqrspumrkazdg90876ns4h78yw03vfxghhcy03yexcrcsdaqvc8/smart/ewogICAgInNpbXVsYXRlX3N3YXBfb3BlcmF0aW9ucyI6ewogICAgICAgICJvZmZlcl9hbW91bnQiOiIxMDAwMDAwMCIsCiAgICAgICAgIm9wZXJhdGlvbnMiOlsKICAgICAgICAgICAgewogICAgICAgICAgICAgICAgInRlcnJhX3N3YXAiOnsKICAgICAgICAgICAgICAgICAgICAib2ZmZXJfYXNzZXRfaW5mbyI6ewogICAgICAgICAgICAgICAgICAgICAgICAibmF0aXZlX3Rva2VuIjp7CiAgICAgICAgICAgICAgICAgICAgICAgICAgICAiZGVub20iOiJ1bHVuYSIKICAgICAgICAgICAgICAgICAgICAgICAgfQogICAgICAgICAgICAgICAgICAgIH0sCiAgICAgICAgICAgICAgICAgICAgImFza19hc3NldF9pbmZvIjp7CiAgICAgICAgICAgICAgICAgICAgICAgICJ0b2tlbiI6ewogICAgICAgICAgICAgICAgICAgICAgICAgICAgImNvbnRyYWN0X2FkZHIiOiJ0ZXJyYTFjbDBrdzlheHpwemt3NThzbmo2Y3kwaGZwMHhwOHhoOXR1ZHB3MmV4dnp1dXBuM2ZhZndxcWhqYzI0IgogICAgICAgICAgICAgICAgICAgICAgICB9CiAgICAgICAgICAgICAgICAgICAgfQogICAgICAgICAgICAgICAgfQogICAgICAgICAgICB9LAogICAgICAgICAgICB7CiAgICAgICAgICAgICAgICAidGVycmFfc3dhcCI6ewogICAgICAgICAgICAgICAgICAgICJvZmZlcl9hc3NldF9pbmZvIjp7CiAgICAgICAgICAgICAgICAgICAgICAgICJ0b2tlbiI6ewogICAgICAgICAgICAgICAgICAgICAgICAgICAgImNvbnRyYWN0X2FkZHIiOiJ0ZXJyYTFjbDBrdzlheHpwemt3NThzbmo2Y3kwaGZwMHhwOHhoOXR1ZHB3MmV4dnp1dXBuM2ZhZndxcWhqYzI0IgogICAgICAgICAgICAgICAgICAgICAgICB9CiAgICAgICAgICAgICAgICAgICAgfSwKICAgICAgICAgICAgICAgICAgICAiYXNrX2Fzc2V0X2luZm8iOnsKICAgICAgICAgICAgICAgICAgICAgICAgInRva2VuIjp7CiAgICAgICAgICAgICAgICAgICAgICAgICAgICAiY29udHJhY3RfYWRkciI6InRlcnJhMXFueXB6d3FhMDNoOHZxczBzeGpwOGh4dzB4eTV6Znd5YXgyNmpnbmw1azRsdzkydGp3MHNjZGtyem0iCiAgICAgICAgICAgICAgICAgICAgICAgIH0KICAgICAgICAgICAgICAgICAgICB9CiAgICAgICAgICAgICAgICB9CiAgICAgICAgICAgIH0KICAgICAgICBdCiAgICB9Cn0=](https://pisco-lcd.terra.dev/cosmwasm/wasm/v1/contract/terra1xp6xe6uwqrspumrkazdg90876ns4h78yw03vfxghhcy03yexcrcsdaqvc8/smart/ewogICAgInNpbXVsYXRlX3N3YXBfb3BlcmF0aW9ucyI6ewogICAgICAgICJvZmZlcl9hbW91bnQiOiIxMDAwMDAwMCIsCiAgICAgICAgIm9wZXJhdGlvbnMiOlsKICAgICAgICAgICAgewogICAgICAgICAgICAgICAgInRlcnJhX3N3YXAiOnsKICAgICAgICAgICAgICAgICAgICAib2ZmZXJfYXNzZXRfaW5mbyI6ewogICAgICAgICAgICAgICAgICAgICAgICAibmF0aXZlX3Rva2VuIjp7CiAgICAgICAgICAgICAgICAgICAgICAgICAgICAiZGVub20iOiJ1bHVuYSIKICAgICAgICAgICAgICAgICAgICAgICAgfQogICAgICAgICAgICAgICAgICAgIH0sCiAgICAgICAgICAgICAgICAgICAgImFza19hc3NldF9pbmZvIjp7CiAgICAgICAgICAgICAgICAgICAgICAgICJ0b2tlbiI6ewogICAgICAgICAgICAgICAgICAgICAgICAgICAgImNvbnRyYWN0X2FkZHIiOiJ0ZXJyYTFjbDBrdzlheHpwemt3NThzbmo2Y3kwaGZwMHhwOHhoOXR1ZHB3MmV4dnp1dXBuM2ZhZndxcWhqYzI0IgogICAgICAgICAgICAgICAgICAgICAgICB9CiAgICAgICAgICAgICAgICAgICAgfQogICAgICAgICAgICAgICAgfQogICAgICAgICAgICB9LAogICAgICAgICAgICB7CiAgICAgICAgICAgICAgICAidGVycmFfc3dhcCI6ewogICAgICAgICAgICAgICAgICAgICJvZmZlcl9hc3NldF9pbmZvIjp7CiAgICAgICAgICAgICAgICAgICAgICAgICJ0b2tlbiI6ewogICAgICAgICAgICAgICAgICAgICAgICAgICAgImNvbnRyYWN0X2FkZHIiOiJ0ZXJyYTFjbDBrdzlheHpwemt3NThzbmo2Y3kwaGZwMHhwOHhoOXR1ZHB3MmV4dnp1dXBuM2ZhZndxcWhqYzI0IgogICAgICAgICAgICAgICAgICAgICAgICB9CiAgICAgICAgICAgICAgICAgICAgfSwKICAgICAgICAgICAgICAgICAgICAiYXNrX2Fzc2V0X2luZm8iOnsKICAgICAgICAgICAgICAgICAgICAgICAgInRva2VuIjp7CiAgICAgICAgICAgICAgICAgICAgICAgICAgICAiY29udHJhY3RfYWRkciI6InRlcnJhMXFueXB6d3FhMDNoOHZxczBzeGpwOGh4dzB4eTV6Znd5YXgyNmpnbmw1azRsdzkydGp3MHNjZGtyem0iCiAgICAgICAgICAgICAgICAgICAgICAgIH0KICAgICAgICAgICAgICAgICAgICB9CiAgICAgICAgICAgICAgICB9CiAgICAgICAgICAgIH0KICAgICAgICBdCiAgICB9Cn0=)
 
-### Reverse simulate swap operations
-Number of Luna needed to get 10 TNT <br>
+### Reverse Simulate Swap Operations
+
+Query the amount of LUNA required to receive 10 TNT via DELIGHT<br>
+
 ```json
 {
     "reverse_simulate_swap_operations":{
