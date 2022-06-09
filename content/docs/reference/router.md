@@ -45,14 +45,14 @@ Case 1) The first source token is a native token (KRT => UST => mABNB)<br />
 
 Case 2) The first source token is a CW20 token (ANC => UST => KRT)<br />
 
-Note: `Binary()` means that this JSON message should be encoded into Base64.<br />
+Note: `Base64()` means that this JSON message should be encoded into Base64.<br />
 
 ```json
 {
   "send": {
     "amount": "100000000",
     "contract": "terra14z80rwpd0alzj4xdtgqdmcqt9wd9xj5ffd60wp",
-    "msg": Binary({
+    "msg": Base64({
         "execute_swap_operations":{
             "operations":[
                 {
@@ -212,14 +212,14 @@ Case 1) The first source token is a native token (Luna => DELIGHT => TNT)<br />
 
 Case 2) The first source token is a CW20 token (DELIGHT => Luna => TNT)<br />
 
-Note: `Binary()` means that this JSON message should be encoded into Base64.<br />
+Note: `Base64()` means that this JSON message should be encoded into Base64.<br />
 
 ```json
 {
   "send": {
     "amount": "100000000",
     "contract": "terra1cl0kw9axzpzkw58snj6cy0hfp0xp8xh9tudpw2exvzuupn3fafwqqhjc24",
-    "msg": Binary({
+    "msg": Base64({
         "execute_swap_operations":{
             "operations":[
                 {

@@ -67,7 +67,7 @@ Swapping contract-minted token to native token is executed with the same logic a
     "send": {
         "contract": "<HumanAddr>",
         "amount": "10",
-        "msg": Binary({
+        "msg": Base64({
             "swap": {}
         })
     }
