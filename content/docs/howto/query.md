@@ -5,7 +5,7 @@ bookFlatSection: true
 
 # Query
 
-## How to send query request
+## How to Send a Query Request
 
 - Command line
 ```bash
@@ -28,34 +28,34 @@ ex)
 https:://lcd.terra.dev/cosmwasm/wasm/v1/contract/terra1466nf3zuxpya8q9emxukd7vftaf6h4psr0a07srl5zw74zh84yjqxl5qul/smart/eyJwYWlycyI6e319
 ```
 
-## How to oragnize query message
+## How to Organize a Query Message
 
 You may check `<contract>/src/msg.rs` of each contract. <br/>
-Here is an example. Query messages are defined as like below:
+Here is an example. Query messages are defined as below:
 
 ```rust
 #[derive(Serialize, Deserialize, Clone, Debug, PartialEq, JsonSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum QueryMsg {
-    Balance { address: HumanAddr },
+    Balance { address: <Addr> },
     ...
 }
 ```
 
-This is one of the message
+This is one of the messages
 ```rust
-Balance { address: HumanAddr }
+Balance { address: <Addr> }
 ```
 
-You may wrap as `{}` and change it into snake case as like below:
+You may change it into snake case and add within `{}` as like below:
 ```json
-{"balance": {"address": "<HumanAddr>"}}
+{"balance": {"address": "<Addr>"}}
 ```
 
-`HumanAddr` is a type, which is bech32-encoded address starting from `terra`.<br />
+`Addr` is a type, which is bech32-encoded address `terra` prefixed.<br />
 Here is an example:
 ```json
 {"balance": {"address": "terra1wxe503thjmapngtnyqarxrc4jy80vf800vf0cy"}}
 ```
 
-This rule can be applied to other messages. This overview can be helpful of contract self-study.
+This rule also can be applied to other messages, so you can utilize this guide as a reference for your practice.

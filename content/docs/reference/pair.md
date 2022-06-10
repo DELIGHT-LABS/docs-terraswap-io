@@ -7,12 +7,12 @@ bookFlatSection: true
 
 ## Transaction
 
-### Provide liquidity
+### Provide Liquidity
 
-Send user's asset to a Terraswap contract and provide liquidity.<br />
+Send user's asset to a Terraswap contract in order to provide liquidity.<br />
 **NOTE: You should [allow your allowance]({{< relref "/docs/reference/token" >}}) of the token before providing liquidity!**
 
-Asset can be both of contract-based token and native token. It can be distinguished with the key under `info`: `token` or `native_token`.
+The asset can be both a contract-based token and a native token. It can be distinguished by the key under `info`: `token` or `native_token`.
 
 
 ```json
@@ -22,7 +22,7 @@ Asset can be both of contract-based token and native token. It can be distinguis
       {
         "info" : {
             "token": {
-                "contract_addr": "<HumanAddr>"
+                "contract_addr": "<Addr>"
             }
         },
         "amount": "10"
@@ -36,16 +36,16 @@ Asset can be both of contract-based token and native token. It can be distinguis
         "amount": "10"
       }
     ],
-    "slippage_tolerance": 0.1 // optinonal
+    "slippage_tolerance": 0.1 // optional
   }
 }
 ```
 
 ### Swap
 
-Swap between the given two tokens. It can be thought of as trade.<br />
-`offer_asset` is your source asset and `to` is your destination token contract.<br />
-`Base64()` means that this JSON message should be encoded into Base64.<br />
+Swap between the given two tokens. It can be considered as trade.<br />
+`offer_asset` is your source asset and `to` is a destination address to receive, which is optional.<br />
+`Binary()` means that this JSON message should be encoded into Base64.<br />
 
 
 ```json
@@ -61,7 +61,7 @@ Swap between the given two tokens. It can be thought of as trade.<br />
         },
         "belief_price": 0.1,  // optional
         "max_spread": 0.1, // optional
-        "to": "<HumanAddr>",
+        "to": "<Addr>", // optional
     }
 }
 ```
@@ -69,21 +69,21 @@ Swap between the given two tokens. It can be thought of as trade.<br />
 ```json
 {
     "send": {
-        "contract": "<HumanAddr>",
+        "contract": "<Addr>",
         "amount": "10",
         "msg": Base64({
             "swap": {
                 "offer_asset": {
                     "info" : {
                         "token": {
-                            "contract_addr": "<HumanAddr>"
+                            "contract_addr": "<Addr>"
                         }
                     },
                     "amount": "10"
                 },
                 "belief_price": 0.1,  // optional
                 "max_spread": 0.1, // optional
-                "to": "<HumanAddr>" // optional,
+                "to": "<Addr>", // optional
             }
         })
     }
@@ -112,7 +112,7 @@ Swap between the given two tokens. It can be thought of as trade.<br />
         "offer_asset": {
             "info" : {
                 "token": {
-                    "contract_addr": "<HumanAddr>"
+                    "contract_addr": "<Addr>"
                 }
             },
             "amount": "10"
@@ -121,7 +121,7 @@ Swap between the given two tokens. It can be thought of as trade.<br />
 }
 ```
 
-### Reverse simulation
+### Reverse Simulation
 
 ```json
 {
@@ -129,7 +129,7 @@ Swap between the given two tokens. It can be thought of as trade.<br />
         "ask_asset": {
             "info" : {
                 "token": {
-                    "contract_addr": "<HumanAddr>"
+                    "contract_addr": "<Addr>"
                 }
             },
             "amount": "10"
