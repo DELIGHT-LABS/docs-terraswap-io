@@ -1,6 +1,6 @@
 # Terraswap document
 
-baseURL = "https://docs-terraswap-io.netlify.app"
+baseURL = "https://docs.terraswap.io"
 languageCode = "en-us"
 title = "Terraswap"
 theme = "book-delight"
