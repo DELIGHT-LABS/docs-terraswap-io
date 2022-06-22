@@ -85,3 +85,13 @@ Instantiate a pair from uploaded WASM binary. Please check [this document]({{< r
     }
 }
 ```
+
+### Native Token Decimals
+
+```json
+{
+    "native_token_decimals": {
+        "denom": "uluna"
+    }
+}
+```
