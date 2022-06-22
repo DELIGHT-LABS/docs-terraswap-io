@@ -44,5 +44,4 @@ Then, you may execute the contract with the organized JSON above.
 
 ## IMPORTANT - Only for Terra 2.0
 
-PLEASE BE AWARE that the transaction would work only if you send the tiny number (like 0.000001) of native or IBC tokens in case of creating a pair that contains them.
-The contract uses the received token to validate whether it exists or not.
+PLEASE BE AWARE that native tokens must be registered in the factory first in order to create a pair including them. You can check registered native tokens through [this query]({{< ref "/docs/reference/factory#native-token-decimals" >}}). Contact us via [Terraswap Discord](https://discord.gg/XERFR8dCWv) if you need to add a new native token.
