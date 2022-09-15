@@ -18,12 +18,9 @@
 
 ### Columbus-5 Mainnet
 
-- Token code id: 3
-- Pair code id: 4
-- Factory code id: 5
-- Router code id: 4506
-- Factory contract address: `terra1ulgw0td86nvs4wtpsc80thv6xelk76ut7a7apj`
-- Router contract address: `terra19f36nz49pt0a4elfkd6x7gxxfmn3apj7emnenf`
+- Token code id: 6036
+- Factory contract address: `terra1jkndu9w5attpz09ut02sgey5dd3e8sq5watzm0`
+- Router contract address: `terra1g3zc8lwwmkrm0cz9wkgl849pdqaw6cq8lh7872`
 
 ## Allowlisted Token
 - [cw20](https://github.com/terra-money/assets/blob/master/cw20/tokens.js)
