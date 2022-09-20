@@ -11,7 +11,7 @@ PLEASE CHECK [HERE](#important---only-for-terra-20) for additional action on Ter
 
 You can use the Terraswap token factory contract.
 - The address on Terra 2.0: `terra1466nf3zuxpya8q9emxukd7vftaf6h4psr0a07srl5zw74zh84yjqxl5qul`
-- The address on Terra Classic: `terra1ulgw0td86nvs4wtpsc80thv6xelk76ut7a7apj`
+- The address on Terra Classic: `terra1jkndu9w5attpz09ut02sgey5dd3e8sq5watzm0`
 
 The JSON message format is as follows:
 
